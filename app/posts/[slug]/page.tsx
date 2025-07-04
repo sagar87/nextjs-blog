@@ -30,7 +30,7 @@ const PostPage = async (props: any) => {
   return (
     <div className="w-full">
       <h2 className="text-2xl text-bold text-violet-400">{post.data.title}</h2>
-      <article className="prose prose-base">
+      <article className="prose prose-base max-w-none">
         <Markdown
           remarkPlugins={[remarkMath, remarkGfm]}
           rehypePlugins={[rehypeKatex, rehypeRaw]}
