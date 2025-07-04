@@ -12,6 +12,7 @@ const readFrontmatter = (fileName: string): PostMetaData => {
     date: frontmatter.data.date,
     subtitle: frontmatter.data.subtitle,
     slug: fileName.replace(".md", ""),
+    published: frontmatter.data.published,
   };
 };
 
@@ -19,7 +20,8 @@ const getPostMetaData = (): PostMetaData[] => {
   const files = fs.readdirSync(folder);
   const markDownFiles = files.filter((file) => file.endsWith(".md"));
   const meta = markDownFiles.map((file) => readFrontmatter(file));
-  return meta;
+  const filteredPosts = meta.filter((data) => data.published);
+  return filteredPosts;
 };
 
 export default getPostMetaData;
