@@ -4,4 +4,12 @@ subtitle: "Understanding Pyro’s enumeration strategy for discrete latent varia
 date: "2020-11-19"
 ---
 
-Let us consider a standard text book problem (this one is in fact from David Mac Keys superb Information theory, Inderence and Learning Algorithms book): consider that we blindly draw a urn from set of ten urns each containing $10$ balls. Urn $u$ contains $u$ black balls and $$10-u$$ white balls, and we draw from our chosen urn $N$ times with replacement from that urn, obtaining in this way $nB$ black and $N-nB$ white balls. After drawing from the urn $N=10$ times we ask ourselves which urn we have drawn from.
+Let us consider a standard text book problem (this one is in fact from David Mac Keys superb Information theory, Inderence and Learning Algorithms book): consider that we blindly draw a urn from set of ten urns each containing $10$ balls. Urn $u$ contains $u$ black balls and $10-u$ white balls, and we draw from our chosen urn $N$ times with replacement from that urn, obtaining in this way $nB$ black and $N-nB$ white balls. After drawing from the urn $N=10$ times we ask ourselves which urn we have drawn from.
+
+
+$$
+\begin{aligned}
+u &\sim \text{Categorical}([p_0 = 0, p_2 = \frac{1}{10},\dots, p_ {10} = \frac{1}{10} ]) \\
+n_B | u &\sim \text{Bin}(n=10, p=\frac{u}{10})
+\end{aligned}
+$$
