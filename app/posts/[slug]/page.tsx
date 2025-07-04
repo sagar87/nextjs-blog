@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import getPostMetaData from "@/components/getPostMetaData";
 
 import rehypeKatex from "rehype-katex";
+import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import "katex/dist/katex.min.css"; // `rehype-katex` does not import the CSS for you
@@ -27,12 +28,12 @@ const PostPage = async (props: any) => {
   const { slug } = await props.params;
   const post = getPageContent(slug);
   return (
-    <div>
+    <div className="w-full">
       <h2 className="text-2xl text-bold text-violet-400">{post.data.title}</h2>
       <article className="prose prose-base">
         <Markdown
           remarkPlugins={[remarkMath, remarkGfm]}
-          rehypePlugins={[rehypeKatex]}
+          rehypePlugins={[rehypeKatex, rehypeRaw]}
         >
           {post.content}
         </Markdown>
