@@ -2,6 +2,7 @@
 title: "Fully Connected Sigmoid Networks"
 subtitle: "In this article, I explore how autoregression, typically used in temporal or sequential data, can be applied to images."
 date: "2025-01-23"
+published: true
 ---
 
 The context of autoregression in terms of temporal data or language is pretty straightforward. Stock prices can rise or fall over time, similarly the order of words in a sentence is not random or independent of each other. But how can we understand autoregression in the context of images ? One possible way to frame images in an autoregression problem is to look one pixel at a time, starting from the top left corner of the image and moving then to the right until we hit the right border and then to continue in the next line. Then we can regard each individual pixel $x_n$ as a data point in a sequence of $n={1,\dots,N}$ data points. In the case of the Caltech Silhouette dataset (Fig. 1), where the data comprises a set of greyscale images, the individual $x_n$ take either the values 0 or 1.

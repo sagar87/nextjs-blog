@@ -2,6 +2,7 @@
 title: "Fitting a Poisson mixture model using Expectation Maximisation"
 subtitle: "In this Blogpost we will derive the equations required to fit Poisson mixture from scratch and implement the model using Python."
 date: "2020-11-19"
+published: true
 ---
 
 Count data are ubiquitous in science. For example, in biology hightroughput sequencing experiments create huge datasets of gene counts. In this blogpost, I will take a closer look at the Expectation Maximisation (EM) algorithm and use it to derive a Poisson mixture model. To get started, however, we will simulate some data from a Poisson mixture using `numpy` and `scipy`.
@@ -33,7 +34,7 @@ sns.despine()
 plt.savefig('histogram.png', bbox_inches='tight', pad_inches=0)
 ```
 
-![Simulated data](/images/histogram.png)
+![Simulated data](/images/poisson-mixture/histogram.png)
 
 The plot nicely illustrates the three clusters in the data centered at roughly 30, 100 and 150. Now, imagine that you had been given these data and your task is to determine the proportion of data belonging to each of the three clusters and their respective cluster centers. In the following, we will first motivate the usage of the EM algorithm, apply it to our problem and finally implement the model in `Python`.
 
@@ -245,7 +246,7 @@ Step 9: NLL=2345.85, Δ=0.00
 
 We find that the EM algorithm quickly converges to the optimal solutions, although obviously this implementation is for demonstration purposes only.
 
-![Convergence of the model after 10 iterations.](/images/convergence.png)
+![Convergence of the model after 10 iterations.](/images/poisson-mixture/convergence.png)
 
 ## Conclusion
 
