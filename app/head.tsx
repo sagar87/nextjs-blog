@@ -1,8 +1,3 @@
-
-
-
-
-
 const Head = () => {
   return (
     <>
