@@ -4,6 +4,11 @@ import Markdown from "react-markdown";
 import matter from "gray-matter";
 import getPostMetaData from "@/components/getPostMetaData";
 
+import rehypeKatex from "rehype-katex";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import "katex/dist/katex.min.css"; // `rehype-katex` does not import the CSS for you
+
 const getPageContent = (slug: string) => {
   const folder = "posts";
   const file = `${folder}/${slug}.md`;
@@ -26,7 +31,12 @@ const PostPage = async (props: any) => {
     <div>
       <h2 className="text-2xl text-bold text-violet-400">{post.data.title}</h2>
       <article className="prose prose-base">
-        <Markdown>{post.content}</Markdown>
+        <Markdown
+          remarkPlugins={[remarkMath, remarkGfm]}
+          rehypePlugins={[rehypeKatex]}
+        >
+          {post.content}
+        </Markdown>
       </article>
     </div>
   );
