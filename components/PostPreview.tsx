@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { formatDate } from "date-fns";
 import { PostMetaData } from "./PostMetaData";
 
 const PostPreview = (props: PostMetaData) => {
@@ -12,7 +13,9 @@ const PostPreview = (props: PostMetaData) => {
           {props.title}
         </h2>
       </Link>
-      <p className="text-sm text-slate-400">{props.date}</p>
+      <p className="text-sm text-slate-400">
+        {formatDate(props.date, "yyyy-MM-dd")}
+      </p>
       <p className="text-slate-700">{props.subtitle}</p>
     </div>
   );
