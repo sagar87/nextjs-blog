@@ -5,11 +5,11 @@ import { PostMetaData } from "./PostMetaData";
 const PostPreview = (props: PostMetaData) => {
   return (
     <div
-      className="border border-violet-200 p-5 rounded-md shadow-md bg-white"
+      className="border border-blue-100 p-5 rounded-md shadow-md bg-slate-100/25 "
       key={props.slug}
     >
       <Link href={`posts/${props.slug}`}>
-        <h2 className="font-bold text-violet-500 hover:underline">
+        <h2 className="font-bold blue_gradient hover:underline">
           {props.title}
         </h2>
       </Link>

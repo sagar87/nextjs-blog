@@ -28,8 +28,10 @@ const PostPage = async (props: any) => {
   const { slug } = await props.params;
   const post = getPageContent(slug);
   return (
-    <div className="w-full">
-      <h2 className="text-2xl text-bold text-violet-400">{post.data.title}</h2>
+    <div className="w-full border border-blue-100  bg-slate-100/25 rounded-md p-5">
+      <h2 className="text-2xl font-bold text-center blue_gradient my-2">
+        {post.data.title}
+      </h2>
       <article className="prose prose-base max-w-none">
         <Markdown
           remarkPlugins={[remarkMath, remarkGfm]}

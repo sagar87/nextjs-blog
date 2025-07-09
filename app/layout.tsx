@@ -12,6 +12,9 @@ export default function RootLayout({
     <html lang="en">
       <Head />
       <body>
+        <div className="main">
+          <div className="gradient"></div>
+        </div>
         <div className="mx-auto max-w-3xl px-6">
           <Header />
           {children}
