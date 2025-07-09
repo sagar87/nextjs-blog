@@ -1,7 +1,7 @@
 ---
 title: "Revisiting Variational Inference for Statististican"
 subtitle: "In this blogpost, I'll extend the derivations of the Gaussian Mixture model of the paper in the hope to elucidate some of the steps over which the authors went quickly."
-date: "2020-11-19"
+date: "2022-02-27"
 published: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Fitting a Poisson mixture model using Expectation Maximisation"
 subtitle: "In this Blogpost we will derive the equations required to fit Poisson mixture from scratch and implement the model using Python."
-date: "2020-11-19"
+date: "2021-12-31"
 published: true
 ---
 

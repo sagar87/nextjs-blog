@@ -1,7 +1,7 @@
 ---
 title: "Config Enumerate in Pyro"
 subtitle: "Understanding Pyro’s enumeration strategy for discrete latent variables."
-date: "2020-11-19"
+date: "2020-06-21"
 published: true
 ---
 
